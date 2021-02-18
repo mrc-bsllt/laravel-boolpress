@@ -26,6 +26,9 @@ header ul li:hover {
   background-color: #1d68a7;
   cursor: pointer;
 }
+header ul li.active {
+  background-color: #1d68a7;
+}
 
 main {
   height: calc(100vh - 80px);

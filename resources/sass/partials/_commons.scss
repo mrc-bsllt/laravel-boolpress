@@ -26,6 +26,9 @@ header {
         background-color: #1d68a7;
         cursor: pointer;
       }
+      &.active {
+        background-color: #1d68a7;
+      }
     }
   }
 }

@@ -10,11 +10,11 @@
     <body>
       <header>
         <ul>
-          <li>
+          <li class="{{ Route::currentRouteName() == "home" ? "active" : "" }}">
             <a href="{{ route("home") }}">Home</a>
           </li>
-          <li>
-            <a href="#">Blog</a>
+          <li class="{{ Route::currentRouteName() == "blog" ? "active" : "" }}">
+            <a href="{{ route("blog") }}">Blog</a>
           </li>
         </ul>
       </header>

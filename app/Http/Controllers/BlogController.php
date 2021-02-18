@@ -9,7 +9,13 @@ class BlogController extends Controller
 {
   public function index() {
     $posts = Post::all();
-    
+
     return view("blog", compact("posts"));
+  }
+
+  public function show($id) {
+    $post = Post::where("id", $id)->first();
+
+    return view("post", compact("post"));
   }
 }

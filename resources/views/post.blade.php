@@ -18,7 +18,8 @@
             @endforeach
           </ul>
         </div>
-        
+
+        <small><strong>STATUS:</strong> {{ $post->infoPost->status }}</small>
       </div>
     </div>
   </div>

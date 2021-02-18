@@ -45,3 +45,34 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: calc(100% / 5 - 20px);
+  margin: 10px;
+  padding: 15px;
+  transition: transform 0.5s linear;
+}
+.card .card_content {
+  width: 100%;
+}
+.card .card_content img {
+  width: 100%;
+}
+.card .card_content a:hover {
+  text-decoration: none;
+}
+.card .card_content a h3 {
+  margin: 15px 0;
+  color: #121212;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+}
+.card:hover {
+  transform: scale(1.1);
+}

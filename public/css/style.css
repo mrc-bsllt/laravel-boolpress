@@ -1,1 +1,44 @@
+header {
+  height: 80px;
+  background-color: #816279;
+}
+header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  list-style: none;
+}
+header ul li {
+  padding: 10px 20px;
+}
+header ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #121212;
+  font-size: 30px;
+}
+header ul li a:hover {
+  text-decoration: none;
+  color: #121212;
+}
+header ul li:hover {
+  background-color: #1d68a7;
+  cursor: pointer;
+}
 
+main {
+  height: calc(100vh - 80px);
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.flex_container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

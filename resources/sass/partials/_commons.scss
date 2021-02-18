@@ -1,0 +1,44 @@
+header {
+  height: $headerHeight;
+  background-color: $headerColor;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    list-style: none;
+
+    li {
+      padding: 10px 20px;
+
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $titleColor;
+        font-size: 30px;
+        &:hover {
+          text-decoration: none;
+          color: $titleColor;
+        }
+      }
+      &:hover {
+        background-color: #1d68a7;
+        cursor: pointer;
+      }
+    }
+  }
+}
+main {
+  height: calc(100vh - #{$headerHeight});
+}
+h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.flex_container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

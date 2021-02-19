@@ -15,16 +15,19 @@ class BlogController extends Controller
   }
 
   public function show($slug) {
-    
+
     $posts = Post::all();
     $post = null;
 
     foreach ($posts as $postToFilter) {
       $postToFilter->title = Str::slug($postToFilter->title, '-');
+
       if($postToFilter->title == $slug) {
         $post = $postToFilter;
       }
     }
+
+    $post->title = ucfirst(str_replace('-', ' ', $post->title));
 
     return view("post", compact("post"));
   }

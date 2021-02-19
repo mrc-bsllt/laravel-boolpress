@@ -18,3 +18,5 @@ Route::get('/', "HomeController@index")->name("home");
 Route::get('/blog', "BlogController@index")->name("blog");
 
 Route::get('/blog/{slug}', "BlogController@show")->name("post");
+
+Route::post('/blog/{id}', "BlogController@addComment")->name("add-comment");

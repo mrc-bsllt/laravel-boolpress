@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use Illuminate\Support\Str;
+use App\Comment;
 
 class BlogController extends Controller
 {
@@ -30,5 +31,20 @@ class BlogController extends Controller
     $post->title = ucfirst(str_replace('-', ' ', $post->title));
 
     return view("post", compact("post"));
+  }
+
+  public function addComment(Request $request, $id) {
+    $data = $request->all();
+    $data["post_id"] = $id;
+    $post = Post::findOrfail($id);
+
+    $post->title = Str::slug($post->title);
+
+    $newComment = new Comment();
+
+    $newComment->fill($data)->save();
+
+    return redirect()->route("post", $post->title);
+
   }
 }

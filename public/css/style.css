@@ -80,6 +80,10 @@ h1 {
   transform: scale(1.1);
 }
 
+.header img {
+  width: 30%;
+}
+
 .comments .list-section {
   height: 200px;
   padding: 10px;

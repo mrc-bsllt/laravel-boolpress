@@ -3,8 +3,12 @@
 @section("main-content")
   <div class="flex_container">
     <div class="container post-content">
-      <h2 class="text-center">{{ $post->title }} <small>({{ $post->author }})</small></h2>
+      <div class="header text-center">
+        <img src="{{ $post->image }}" alt="{{ $post->title }}">
+        <h2>{{ $post->title }}</h2>
+      </div>
       <p>{{ $post->text }}</p>
+      <small>({{ $post->author }})</small>
       <div class="comments">
         <h4>COMMENTI:</h4>
 
@@ -19,7 +23,23 @@
           </ul>
         </div>
 
-        <small><strong>STATUS:</strong> {{ $post->infoPost->status }}</small>
+        <div class="add-comment">
+          <form action="{{ route("add-comment", $post->id) }}" method="post">
+            @csrf
+            @method("POST")
+
+            <div class="form-group">
+              <label for="author">Username</label>
+              <input type="text" class="form-control" id="author" name="author" value="">
+            </div>
+            <div class="form-group">
+              <label for="content">Inserisci un commento</label>
+              <textarea type="text" class="form-control" id="content" name="content"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success" name="button">Inserisci!</button>
+          </form>
+
+        </div>
       </div>
     </div>
   </div>

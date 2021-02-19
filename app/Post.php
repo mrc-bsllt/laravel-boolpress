@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
 
+  protected $fillable = [
+    "image",
+    "title",
+    "author",
+    "text"
+  ];
+
   public function infoPost() {
     return $this->hasOne("App\PostInfo");
   }

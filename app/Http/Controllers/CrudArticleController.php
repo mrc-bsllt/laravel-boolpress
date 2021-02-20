@@ -9,6 +9,13 @@ use Illuminate\Support\Str;
 
 class CrudArticleController extends Controller
 {
+
+  // Validazione dei dati inseriti
+  private $validationRules = [
+    "image" => "required|max:500",
+    "title" => "required|max:60",
+    "author" => "required|max:30"
+  ];
     /**
      * Display a listing of the resource.
      *
@@ -39,22 +46,24 @@ class CrudArticleController extends Controller
      */
     public function store(Request $request)
     {
+      // Controllo se i dati inseriti dall'utente sono corretti
+      $request->validate($this->validationRules);
+
       // Prendo le informazioni passate dal form
       $data = $request->all();
-
 
       // Creo il nuovo post con le informazioni prese dal form
       $newPost = new Post ();
       $newPost->fill($data)->save();
 
+      // Completo il data per utilizzare il fillabe della tabella post_infos
+      $data["post_id"] = $newPost->id;
+      $data["slug"] = Str::slug($newPost->title);
 
       // Aggiungo la nuova riga di postInfo con cui sarà relazionato
       $newInfo = new PostInfo();
 
-      $newInfo->post_id = $newPost->id;
-      $newInfo->slug = Str::slug($data["title"]);
-      $newInfo->status = $data["status"];
-      $newInfo->save();
+      $newInfo->fill($data)->save();
 
 
       return redirect()->route("crud-articles.index");

@@ -1,6 +1,19 @@
 @extends("../layout.crud-main")
 
 @section("crud-content")
+
+  {{-- Messaggio di errore in caso di dati non corretti --}}
+  @if ($errors->any())
+    <div class="alert alert-danger">
+      <ul>
+        @foreach ($errors->all() as $error)
+          <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+  @endif
+
+  {{-- Form per la compilazione dei dati che verrà mandata allo store --}}
   <form action="{{ route("crud-articles.store") }}" method="post">
     @csrf
     @method("POST")

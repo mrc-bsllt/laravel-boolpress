@@ -26,9 +26,16 @@
             @endif
           @endforeach
 
-          <td><a class="btn btn-secondary" href="{{ route("crud-articles.show", $post->id) }}"><i class="fas fa-info"></i></a></td>
-          <td><a class="btn btn-secondary" href="{{ route("crud-articles.edit", $post->id) }}"><i class="fas fa-pencil-alt"></i></td>
-          <td><a class="btn btn-secondary" href="#"><i class="fas fa-trash"></i></td>
+          <td><a class="btn btn-secondary btn_info" href="{{ route("crud-articles.show", $post->id) }}"><i class="fas fa-info"></i></a></td>
+          <td><a class="btn btn-secondary btn_edit" href="{{ route("crud-articles.edit", $post->id) }}"><i class="fas fa-pencil-alt"></i></a></td>
+          <td>
+            <form action="{{ route("crud-articles.destroy", $post->id) }}" method="post">
+              @csrf
+              @method("DELETE")
+
+              <button class="btn btn-secondary btn_delete" type="submit" name="button"><i class="fas fa-trash"></i></button>
+            </form>
+          </td>
         </tr>
       @endforeach
     </tbody>

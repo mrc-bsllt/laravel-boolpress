@@ -129,6 +129,10 @@ class CrudArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $post = Post::findOrFail($id);
+
+      $post->delete();
+
+      return redirect()->route("crud-articles.index");
     }
 }

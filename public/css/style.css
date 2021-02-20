@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap);
 /*!
  * Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -4651,17 +4652,35 @@ textarea {
   resize: none;
 }
 
-#home {
-  height: calc(100vh - 80px);
-}
-#home h1 {
+h1 {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 100px;
 }
 
 h2 {
-  font-weight: 600;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#home {
+  height: calc(100vh - 80px);
 }
 
 header {
@@ -4709,20 +4728,24 @@ header ul li a:hover {
   color: #121212;
 }
 
-.header img {
-  width: 30%;
+#article img {
+  width: 50%;
 }
-
-.comments .list-section {
+#article p {
+  font-size: 25px;
+}
+#article .author {
+  font-size: 18px;
+  text-decoration: underline;
+}
+#article .list-section {
   height: 200px;
   padding: 10px;
   overflow-y: auto;
-  border: 2px solid #1d68a7;
-  border-radius: 10px;
+  background-color: #f5f5f5;
 }
-.comments .list-section ul {
-  padding: 0;
-  list-style: none;
+#article .list-section li {
+  border-bottom: 1px solid #121212;
 }
 
 #post_detail img {

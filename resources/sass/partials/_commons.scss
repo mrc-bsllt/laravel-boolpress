@@ -9,6 +9,7 @@ ul {
   list-style: none;
 }
 a {
+  display: inline-block;
   text-decoration: none;
 
   &:hover {

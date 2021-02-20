@@ -4620,6 +4620,7 @@ ul {
 }
 
 a {
+  display: inline-block;
   text-decoration: none;
 }
 a:hover {
@@ -4689,35 +4690,23 @@ header ul li a:hover {
   color: #121212;
 }
 
-.cards {
-  display: flex;
+.wrap {
   flex-wrap: wrap;
 }
 
 .card {
   width: calc(100% / 5 - 20px);
-  margin: 10px;
-  padding: 15px;
-  transition: transform 0.5s linear;
-}
-.card .card_content {
-  width: 100%;
-}
-.card .card_content img {
-  width: 100%;
-}
-.card .card_content a:hover {
-  text-decoration: none;
-}
-.card .card_content a h3 {
-  margin: 15px 0;
-  color: #121212;
-  font-size: 15px;
-  font-weight: 700;
-  text-align: center;
+  margin: 20px 10px;
+  transition: transform 0.3s linear;
 }
 .card:hover {
   transform: scale(1.1);
+}
+.card img {
+  width: 100%;
+}
+.card h3 {
+  color: #121212;
 }
 
 .header img {

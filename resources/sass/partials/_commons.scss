@@ -1,9 +1,29 @@
+// PROPRIETà COMUNI IN TUTTA L'APPICLAZIONE
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Caveat', cursive;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .green {
   color: #25af43;
 }
+
 .red {
   color: #cd1010;
 }
+
 .btn_info {
 
   i {
@@ -26,54 +46,17 @@ textarea {
   resize: none;
 }
 
-header {
-  height: $headerHeight;
-  background-color: $headerColor;
-
-  ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    list-style: none;
-
-    li {
-      padding: 10px 20px;
-
-      a {
-        text-decoration: none;
-        text-transform: uppercase;
-        color: $titleColor;
-        font-size: 30px;
-        &:hover {
-          text-decoration: none;
-          color: $titleColor;
-        }
-      }
-      &:hover {
-        background-color: #1d68a7;
-        cursor: pointer;
-      }
-      &.active {
-        background-color: #1d68a7;
-      }
-    }
-  }
-}
-main {
+// HOME PAGE -------------------------------------------------------------------
+#home {
   height: calc(100vh - #{$headerHeight});
-}
-h1 {
-  text-transform: uppercase;
-  font-weight: 700;
-}
-.flex_container {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  h2 {
-    font-weight: 600;
+  h1 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 100px;
   }
+}
+
+h2 {
+  font-weight: 600;
 }

@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap);
 /*!
  * Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -4607,6 +4608,24 @@ readers do not read off random characters that represent icons */
   font-family: 'Font Awesome 5 Free';
   font-weight: 900; }
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Caveat", cursive;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
 .green {
   color: #25af43;
 }
@@ -4631,29 +4650,28 @@ textarea {
   resize: none;
 }
 
+#home {
+  height: calc(100vh - 80px);
+}
+#home h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 100px;
+}
+
+h2 {
+  font-weight: 600;
+}
+
 header {
   height: 80px;
   background-color: #816279;
 }
 header ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100%;
-  list-style: none;
 }
 header ul li {
   padding: 10px 20px;
-}
-header ul li a {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #121212;
-  font-size: 30px;
-}
-header ul li a:hover {
-  text-decoration: none;
-  color: #121212;
 }
 header ul li:hover {
   background-color: #1d68a7;
@@ -4662,24 +4680,13 @@ header ul li:hover {
 header ul li.active {
   background-color: #1d68a7;
 }
-
-main {
-  height: calc(100vh - 80px);
-}
-
-h1 {
+header ul li a {
   text-transform: uppercase;
-  font-weight: 700;
+  color: #121212;
+  font-size: 30px;
 }
-
-.flex_container {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.flex_container h2 {
-  font-weight: 600;
+header ul li a:hover {
+  color: #121212;
 }
 
 .cards {

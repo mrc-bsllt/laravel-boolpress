@@ -1,0 +1,28 @@
+header {
+  height: $headerHeight;
+  background-color: $headerColor;
+
+  ul {
+    height: 100%;
+
+    li {
+      padding: 10px 20px;
+      &:hover {
+        background-color: $blueColor;
+        cursor: pointer;
+      }
+      &.active {
+        background-color: $blueColor;
+      }
+
+      a {
+        text-transform: uppercase;
+        color: $titleColor;
+        font-size: 30px;
+        &:hover {
+          color: $titleColor;
+        }
+      } // a
+    } // li
+  } // ul
+} // header

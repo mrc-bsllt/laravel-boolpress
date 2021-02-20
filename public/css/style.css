@@ -4607,6 +4607,14 @@ readers do not read off random characters that represent icons */
   font-family: 'Font Awesome 5 Free';
   font-weight: 900; }
 
+.green {
+  color: #25af43;
+}
+
+.red {
+  color: #cd1010;
+}
+
 header {
   height: 80px;
   background-color: #816279;
@@ -4703,4 +4711,8 @@ h1 {
 .comments .list-section ul {
   padding: 0;
   list-style: none;
+}
+
+#post_detail img {
+  width: 20%;
 }

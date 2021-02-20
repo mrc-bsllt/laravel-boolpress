@@ -49,6 +49,7 @@ class CrudArticleController extends Controller
     public function show(Post $crud_article)
     {
       $post = $crud_article;
+      //dd($post->infoPost->visits += 1);
 
       return view("crud-articles.show", compact("post"));
     }

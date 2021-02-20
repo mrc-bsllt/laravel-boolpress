@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
-use Illuminate\Support\Str;
+use App\PostInfo;
 use App\Comment;
+use Illuminate\Support\Str;
 
 class BlogController extends Controller
 {
@@ -29,6 +30,10 @@ class BlogController extends Controller
     }
 
     $post->title = ucfirst(str_replace('-', ' ', $post->title));
+
+    // Aumento di 1 le visualizzazioni (al momento non funziona)
+    // $postInfo = PostInfo::where("post_id", $post->id)->first();
+    // $postInfo->visits += 1;
 
     return view("post", compact("post"));
   }

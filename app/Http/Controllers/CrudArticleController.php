@@ -16,6 +16,7 @@ class CrudArticleController extends Controller
     "title" => "required|max:60",
     "author" => "required|max:30"
   ];
+  
     /**
      * Display a listing of the resource.
      *

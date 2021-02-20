@@ -31,7 +31,7 @@ class BlogController extends Controller
 
     $post->title = ucfirst(str_replace('-', ' ', $post->title));
 
-    // Aumento di 1 le visualizzazioni (al momento non funziona)
+    // Aumento di 1 le visualizzazioni al click dell'articolo
     PostInfo::where('post_id', $post->id)
      ->update([
          'visits' => PostInfo::raw('visits + 1')

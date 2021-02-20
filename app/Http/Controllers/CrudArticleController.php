@@ -78,7 +78,6 @@ class CrudArticleController extends Controller
     public function show(Post $crud_article)
     {
       $post = $crud_article;
-      //dd($post->infoPost->visits += 1);
 
       return view("crud-articles.show", compact("post"));
     }
@@ -89,9 +88,11 @@ class CrudArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $crud_article)
     {
-        //
+      $post = $crud_article;
+
+      return view("crud-articles.edit", compact("post"));
     }
 
     /**
@@ -101,9 +102,23 @@ class CrudArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $crud_article)
     {
-        //
+      // Controllo se i dati inseriti dall'utente sono corretti
+      $request->validate($this->validationRules);
+
+      // Prendo le informazioni passate dal form e definisco il post
+      $data = $request->all();
+      $post = $crud_article;
+
+      // Salvo le modifiche nella tabella posts
+      $post->update($data);
+
+      // Salvo le modifiche anche nella tabella relazionata post-infos
+      $infoPost = PostInfo::where("post_id", $post->id)->first();
+      $infoPost->update($data);
+
+      return redirect()->route("crud-articles.index");
     }
 
     /**

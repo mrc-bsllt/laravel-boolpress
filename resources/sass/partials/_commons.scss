@@ -4,6 +4,9 @@
 .red {
   color: #cd1010;
 }
+textarea {
+  resize: none;
+}
 
 header {
   height: $headerHeight;

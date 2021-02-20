@@ -4615,6 +4615,10 @@ readers do not read off random characters that represent icons */
   color: #cd1010;
 }
 
+textarea {
+  resize: none;
+}
+
 header {
   height: 80px;
   background-color: #816279;

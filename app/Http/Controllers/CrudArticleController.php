@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\postInfo;
+use Illuminate\Support\Str;
 
 class CrudArticleController extends Controller
 {
@@ -26,7 +28,7 @@ class CrudArticleController extends Controller
      */
     public function create()
     {
-        //
+      return view("crud-articles.create");
     }
 
     /**
@@ -37,7 +39,25 @@ class CrudArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      // Prendo le informazioni passate dal form
+      $data = $request->all();
+
+
+      // Creo il nuovo post con le informazioni prese dal form
+      $newPost = new Post ();
+      $newPost->fill($data)->save();
+
+
+      // Aggiungo la nuova riga di postInfo con cui sarà relazionato
+      $newInfo = new PostInfo();
+
+      $newInfo->post_id = $newPost->id;
+      $newInfo->slug = Str::slug($data["title"]);
+      $newInfo->status = $data["status"];
+      $newInfo->save();
+
+
+      return redirect()->route("crud-articles.index");
     }
 
     /**

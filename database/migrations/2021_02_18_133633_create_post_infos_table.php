@@ -18,7 +18,7 @@ class CreatePostInfosTable extends Migration
             $table->unsignedBigInteger("post_id");
             $table->string("slug");
             $table->string("status", 7);
-            $table->integer('visits');
+            $table->integer('visits')->default(0);
 
             // relazione con il Database
             $table->foreign('post_id')

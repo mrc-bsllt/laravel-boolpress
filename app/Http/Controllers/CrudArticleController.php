@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\postInfo;
+use App\Tag;
 use Illuminate\Support\Str;
 
 class CrudArticleController extends Controller
@@ -16,7 +17,7 @@ class CrudArticleController extends Controller
     "title" => "required|max:60",
     "author" => "required|max:30"
   ];
-  
+
     /**
      * Display a listing of the resource.
      *
@@ -36,7 +37,9 @@ class CrudArticleController extends Controller
      */
     public function create()
     {
-      return view("crud-articles.create");
+      $tags = Tag::all();
+
+      return view("crud-articles.create", compact("tags"));
     }
 
     /**
@@ -52,7 +55,7 @@ class CrudArticleController extends Controller
 
       // Prendo le informazioni passate dal form
       $data = $request->all();
-
+      
       // Creo il nuovo post con le informazioni prese dal form
       $newPost = new Post ();
       $newPost->fill($data)->save();
@@ -63,9 +66,10 @@ class CrudArticleController extends Controller
 
       // Aggiungo la nuova riga di postInfo con cui sarà relazionato
       $newInfo = new PostInfo();
-
       $newInfo->fill($data)->save();
 
+      // Aggiungo i tags che sono stati selezionati
+      $newPost->tags()->attach($data["tags"]);
 
       return redirect()->route("crud-articles.index");
     }

@@ -8,7 +8,7 @@
   </head>
   <body>
 
-    <main>
+    <main id="crud">
       <div class="container table_container py-5">
         @yield("crud-content")
       </div>

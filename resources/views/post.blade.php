@@ -29,7 +29,7 @@
     </div>
 
     {{-- FORM PER AGGIUNGERE UN COMMENTO --}}
-    <div class="add-comment">
+    <div class="add-comment my-5">
       <form action="{{ route("add-comment", $post->id) }}" method="post">
         @csrf
         @method("POST")

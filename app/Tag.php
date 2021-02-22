@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
-  protected $timestamps = false;
+  public $timestamps = false;
 
   public function posts() {
     return $this->belongsToMany("App\Post");

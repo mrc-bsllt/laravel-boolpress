@@ -1,7 +1,7 @@
 @extends("layout.layout-main")
 
 @section("main-content")
-  @dump($post->tags)
+  
   <section id="article" class="container py-5">
 
     {{-- IMMAGINE E TITOLO DEL POST --}}

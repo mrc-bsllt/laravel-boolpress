@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\PostInfo;
 use App\Comment;
+use App\Tag;
 use Illuminate\Support\Str;
 
 class BlogController extends Controller
@@ -54,4 +55,5 @@ class BlogController extends Controller
     return redirect()->route("post", $post->title);
 
   }
+
 }

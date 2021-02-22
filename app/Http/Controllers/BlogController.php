@@ -55,5 +55,4 @@ class BlogController extends Controller
     return redirect()->route("post", $post->title);
 
   }
-
 }

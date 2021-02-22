@@ -23,7 +23,7 @@ class PostInfosTableSeeder extends Seeder
 
         $newPostInfo->post_id = $post->id;
         $newPostInfo->slug = Str::slug($post->title, '-');
-        $newPostInfo->status = $faker->randomElement(['public', 'private']);
+        $newPostInfo->status = $faker->randomElement(['Public', 'Private']);
         $newPostInfo->visits = $faker->randomDigit();
 
         $newPostInfo->save();

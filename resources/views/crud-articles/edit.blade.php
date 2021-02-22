@@ -37,12 +37,12 @@
       <label for="text">Testo del post</label>
       <textarea class="form-control" name="text" id="text" rows="8">{{ $post->text }}</textarea>
     </div>
-
+    
     <div class="form-group">
       <label for="status">State</label>
       <select id="status" class="form-control" name="status">
-        <option {{ $post->infoPost->status == "Public" ? 'selected' : '' }}>Public</option>
-        <option {{ $post->infoPost->status == "Private" ? 'selected' : '' }}>Private</option>
+        <option value="Public" {{ $post->infoPost->status == "Public" ? 'selected' : '' }}>Public</option>
+        <option value="Private" {{ $post->infoPost->status == "Private" ? 'selected' : '' }}>Private</option>
       </select>
     </div>
 

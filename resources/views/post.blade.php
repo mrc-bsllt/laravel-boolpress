@@ -1,6 +1,7 @@
 @extends("layout.layout-main")
 
 @section("main-content")
+  @dump($post->tags)
   <section id="article" class="container py-5">
 
     {{-- IMMAGINE E TITOLO DEL POST --}}
@@ -9,9 +10,14 @@
       <h2 class="my-4">{{ $post->title }}</h2>
     </div>
 
-    {{-- TESTO DELL'ARTICOLO E AUTORE --}}
+    {{-- TESTO DELL'ARTICOLO, AUTORE E TAGS --}}
     <p>{{ $post->text }}</p>
     <small class="author"><strong><em>{{ $post->author }}</em></strong></small>
+    <ul class="list-inline my-3">
+      @foreach ($post->tags as $tag)
+        <li class="list-inline-item"><a class="btn btn-primary" href="#">{{ $tag->tag_name }}</a></li>
+      @endforeach
+    </ul>
     <hr>
 
     {{-- SEZIONE DEI COMMENTI --}}
@@ -43,6 +49,7 @@
           <textarea type="text" class="form-control" id="content" name="content"></textarea>
         </div>
         <button type="submit" class="btn btn-success" name="button">Inserisci!</button>
+        <a class="btn btn-secondary" href="{{ route("blog") }}">Indietro</a>
       </form>
 
     </div>

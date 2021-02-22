@@ -55,6 +55,9 @@
       </div>
     @endforeach
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="buttons my-3">
+      <button type="submit" class="btn btn-primary">Modifica</button>
+      <a class="btn btn-secondary" href="{{ route("crud-articles.index") }}">Indietro</a>
+    </div>
   </form>
 @endsection

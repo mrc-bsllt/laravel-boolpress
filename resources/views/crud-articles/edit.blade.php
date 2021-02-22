@@ -37,7 +37,7 @@
       <label for="text">Testo del post</label>
       <textarea class="form-control" name="text" id="text" rows="8">{{ $post->text }}</textarea>
     </div>
-    
+
     <div class="form-group">
       <label for="status">State</label>
       <select id="status" class="form-control" name="status">
@@ -45,6 +45,13 @@
         <option value="Private" {{ $post->infoPost->status == "Private" ? 'selected' : '' }}>Private</option>
       </select>
     </div>
+
+    @foreach ($tags as $tag)
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="tags[]" id="tag-{{ $tag->id }}" value="{{ $tag->id }}">
+        <label class="form-check-label" for="tag-{{ $tag->id }}">{{ $tag->tag_name }}</label>
+      </div>
+    @endforeach
 
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

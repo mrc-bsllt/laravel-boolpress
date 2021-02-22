@@ -55,7 +55,7 @@ class CrudArticleController extends Controller
 
       // Prendo le informazioni passate dal form
       $data = $request->all();
-      
+
       // Creo il nuovo post con le informazioni prese dal form
       $newPost = new Post ();
       $newPost->fill($data)->save();
@@ -96,8 +96,9 @@ class CrudArticleController extends Controller
     public function edit(Post $crud_article)
     {
       $post = $crud_article;
+      $tags = Tag::all();
 
-      return view("crud-articles.edit", compact("post"));
+      return view("crud-articles.edit", compact("post", "tags"));
     }
 
     /**
@@ -122,6 +123,13 @@ class CrudArticleController extends Controller
       // Salvo le modifiche anche nella tabella relazionata post-infos
       $infoPost = PostInfo::where("post_id", $post->id)->first();
       $infoPost->update($data);
+
+      // Salvo le modifiche fatte per la scelta dei tags
+      if (!empty($data["tags"])) {
+        $post->tags()->sync($data["tags"]);
+      } else {
+        $post->tags()->detach();
+      }
 
       return redirect()->route("crud-articles.index");
     }

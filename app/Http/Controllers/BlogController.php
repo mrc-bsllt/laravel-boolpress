@@ -55,4 +55,14 @@ class BlogController extends Controller
     return redirect()->route("post", $post->title);
 
   }
+
+  public function getPostsByTag($slug) {
+    $posts = Post::join('post_tag', 'posts.id', '=', 'post_tag.post_id')
+            ->join('tags', 'tags.id', '=', 'post_tag.tag_id')
+            ->select('posts.*')
+            ->where('tags.tag_slug', $slug)
+            ->get();
+
+    return view("tag_posts", compact("posts"));
+  }
 }

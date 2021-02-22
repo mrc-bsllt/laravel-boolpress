@@ -1,7 +1,7 @@
 @extends("layout.layout-main")
 
 @section("main-content")
-  
+
   <section id="article" class="container py-5">
 
     {{-- IMMAGINE E TITOLO DEL POST --}}
@@ -15,7 +15,7 @@
     <small class="author"><strong><em>{{ $post->author }}</em></strong></small>
     <ul class="list-inline my-3">
       @foreach ($post->tags as $tag)
-        <li class="list-inline-item"><a class="btn btn-primary" href="#">{{ $tag->tag_name }}</a></li>
+        <li class="list-inline-item"><a class="btn btn-primary" href="{{ route("tag_posts", $tag->tag_slug) }}">{{ $tag->tag_name }}</a></li>
       @endforeach
     </ul>
     <hr>

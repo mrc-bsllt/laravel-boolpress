@@ -8,13 +8,14 @@
       <title>Laravel</title>
     </head>
     <body>
+      <div id="app">
+        @include("../templates.header")
 
-      @include("../templates.header")
+        <main>
+          @yield("main-content")
+        </main>
 
-      <main id="app">
-        @yield("main-content")
-      </main>
-
+      </div>
       <script src="{{ asset("js/app.js") }}" charset="utf-8"></script>
     </body>
 </html>

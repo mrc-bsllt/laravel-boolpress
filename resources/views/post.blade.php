@@ -24,7 +24,7 @@
     <div class="slick-carousel">
       @foreach ($post->images as $image)
         <div>
-          <img style="width: 90%" src="{{ $image->url }}">
+          <img style="width: 90%" src="{{ $image->url }}" alt="{{ $image->alt }}">
         </div>
       @endforeach
     </div>

@@ -46,11 +46,25 @@
       </select>
     </div>
 
+    <h3 class="mt-3">Tags</h3>
     @foreach ($tags as $tag)
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" name="tags[]" id="tag-{{ $tag->id }}" value="{{ $tag->id }}"
         @if ($post->tags->contains($tag->id)) checked @endif>
         <label class="form-check-label" for="tag-{{ $tag->id }}">{{ $tag->tag_name }}</label>
+      </div>
+    @endforeach
+
+    <h3 class="mt-3">Immagini</h3>
+    @foreach ($images as $image)
+      <div class="form-check form-check-inline m-2 text-center">
+        <input class="form-check-input" type="checkbox" name="images[]" id="image-{{ $image->id }}" value="{{ $image->id }}"
+        @if ($post->images->contains($image->id)) checked @endif
+        >
+        <label class="form-check-label" for="image-{{ $image->id }}">
+          <img style="width: 50px" src="{{ $image->url }}" alt="{{ $image->alt }}">
+          <p>{{ $image->alt }}</p>
+        </label>
       </div>
     @endforeach
 

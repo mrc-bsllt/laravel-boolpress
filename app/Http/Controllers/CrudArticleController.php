@@ -102,8 +102,9 @@ class CrudArticleController extends Controller
     {
       $post = $crud_article;
       $tags = Tag::all();
+      $images = Image::all();
 
-      return view("crud-articles.edit", compact("post", "tags"));
+      return view("crud-articles.edit", compact("post", "tags", "images"));
     }
 
     /**
@@ -134,6 +135,13 @@ class CrudArticleController extends Controller
         $post->tags()->sync($data["tags"]);
       } else {
         $post->tags()->detach();
+      }
+
+      // Salvo le modifiche fatte nella checkbox delle Immagini
+      if (empty($data["images"])) {
+        $post->images()->detach();
+      } else {
+        $post->images()->sync($data["images"]);
       }
 
       return redirect()->route("crud-articles.index");

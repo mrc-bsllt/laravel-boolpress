@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap');
+@import "~slick-carousel/slick/slick";
+@import "~slick-carousel/slick/slick-theme";
 @import '~@fortawesome/fontawesome-free/css/all.css';
 @import "partials/_vars";
 @import "partials/_commons";
@@ -6,3 +8,19 @@
 @import "partials/_cards";
 @import "partials/_post";
 @import "partials/crud";
+
+/* Defines the width of the carousel and centers it on the page */
+.slick-carousel {
+  margin: 0 auto;
+  width: 1000px;
+}
+
+/* The width of each slide */
+.slick-slide {
+  width: 350px;
+}
+
+/* Color of the arrows */
+.slick-next::before, .slick-prev::before {
+  color: blue;
+}

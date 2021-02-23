@@ -21,13 +21,34 @@
     <hr>
 
     {{-- CAROSELLO DI IMMAGINI --}}
-    <ul class="d-flex justify-content-center">
+    {{-- <ul class="d-flex justify-content-center">
       @foreach ($post->images as $image)
         <li class="mx-3">
           <img style="width: 100px; border-radius: 10px" src="{{ $image->url }}" alt="{{ $image->alt }}">
         </li>
       @endforeach
-    </ul>
+    </ul> --}}
+    <div class="slick-carousel">
+  <!-- Inside the containing div, add one div for each slide -->
+  @foreach ($post->images as $image)
+    <div>
+      <!-- You can put an image or text inside each slide div -->
+      <img style="width: 90%" src="{{ $image->url }}">
+    </div>
+  @endforeach
+      {{-- <div>
+        <img src="http://placekitten.com/g/320/240">
+      </div>
+      <div>
+        <img src="http://placekitten.com/g/320/240">
+      </div>
+      <div>
+        <img src="http://placekitten.com/g/320/240">
+      </div>
+      <div>
+        <img src="http://placekitten.com/g/320/240">
+      </div> --}}
+    </div>
     <hr>
     {{-- SEZIONE DEI COMMENTI --}}
     <h4><strong>COMMENTI</strong></h4>

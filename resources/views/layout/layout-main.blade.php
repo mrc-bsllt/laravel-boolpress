@@ -5,9 +5,6 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="{{ asset("css/app.css") }}">
       <link rel="stylesheet" href="{{ asset("css/style.css") }}">
-      <style media="screen">
-        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
-      </style>
       <title>Laravel</title>
     </head>
     <body>

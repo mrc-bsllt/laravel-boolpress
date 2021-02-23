@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\postInfo;
 use App\Tag;
+use App\Image;
 use Illuminate\Support\Str;
 
 class CrudArticleController extends Controller
@@ -38,8 +39,9 @@ class CrudArticleController extends Controller
     public function create()
     {
       $tags = Tag::all();
+      $images = Image::all();
 
-      return view("crud-articles.create", compact("tags"));
+      return view("crud-articles.create", compact("tags", "images"));
     }
 
     /**

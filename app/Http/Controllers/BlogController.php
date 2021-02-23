@@ -33,10 +33,8 @@ class BlogController extends Controller
     $post->title = ucfirst(str_replace('-', ' ', $post->title));
 
     // Aumento di 1 le visualizzazioni al click dell'articolo
-    PostInfo::where('post_id', $post->id)
-     ->update([
-         'visits' => PostInfo::raw('visits + 1')
-     ]);
+     $infoColumnToChange = PostInfo::where('post_id', $post->id)->first();
+     $infoColumnToChange->increment("visits");
 
     return view("post", compact("post"));
   }
@@ -57,11 +55,12 @@ class BlogController extends Controller
   }
 
   public function getPostsByTag($slug) {
+
     $posts = Post::join('post_tag', 'posts.id', '=', 'post_tag.post_id')
-            ->join('tags', 'tags.id', '=', 'post_tag.tag_id')
-            ->select('posts.*')
-            ->where('tags.tag_slug', $slug)
-            ->get();
+      ->join('tags', 'tags.id', '=', 'post_tag.tag_id')
+      ->select('posts.*')
+      ->where('tags.tag_slug', $slug)
+      ->get();
 
     return view("tag_posts", compact("posts"));
   }

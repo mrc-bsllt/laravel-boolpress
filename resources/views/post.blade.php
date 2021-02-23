@@ -21,14 +21,14 @@
     <hr>
 
     {{-- CAROSELLO DI IMMAGINI --}}
-    <ul class="d-flex justify-content-center">
+    <div class="slick-carousel">
       @foreach ($post->images as $image)
-        <li class="mx-3">
-          <img style="width: 100px; border-radius: 10px" src="{{ $image->url }}" alt="{{ $image->alt }}">
-        </li>
+        <div>
+          <img style="width: 90%" src="{{ $image->url }}">
+        </div>
       @endforeach
-    </ul>
-    
+    </div>
+
     <hr>
     {{-- SEZIONE DEI COMMENTI --}}
     <h4><strong>COMMENTI</strong></h4>

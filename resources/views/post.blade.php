@@ -38,7 +38,7 @@
           <li class="shadow p-3 mb-5 bg-white rounded position-relative">
             <small class="author"><strong>{{ $comment->author }}</strong></small>
             <p>{{ $comment->content }}</p>
-            <small class="date">{{ $comment->created_at->format("l d-m-Y") }}</small>
+            <small class="date">{{ $comment->created_at->locale("it")->isoFormat("dddd DD/MMMM/YYYY HH:mm") }}</small>
           </li>
         @endforeach
       </ul>

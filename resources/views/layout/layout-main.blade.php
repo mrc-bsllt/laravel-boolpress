@@ -11,7 +11,7 @@
 
       @include("../templates.header")
 
-      <main>
+      <main id="app">
         @yield("main-content")
       </main>
 

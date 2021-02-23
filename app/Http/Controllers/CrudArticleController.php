@@ -73,6 +73,9 @@ class CrudArticleController extends Controller
       // Aggiungo i tags che sono stati selezionati
       $newPost->tags()->attach($data["tags"]);
 
+      // Aggiungo le immagini selezionate dalle checkbox
+      $newPost->images()->attach($data["images"]);
+
       return redirect()->route("crud-articles.index");
     }
 

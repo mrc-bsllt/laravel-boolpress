@@ -20,6 +20,15 @@
     </ul>
     <hr>
 
+    {{-- CAROSELLO DI IMMAGINI --}}
+    <ul class="d-flex justify-content-center">
+      @foreach ($post->images as $image)
+        <li class="mx-3">
+          <img style="width: 100px; border-radius: 10px" src="{{ $image->url }}" alt="{{ $image->alt }}">
+        </li>
+      @endforeach
+    </ul>
+    <hr>
     {{-- SEZIONE DEI COMMENTI --}}
     <h4><strong>COMMENTI</strong></h4>
 

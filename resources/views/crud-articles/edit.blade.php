@@ -59,8 +59,7 @@
     @foreach ($images as $image)
       <div class="form-check form-check-inline m-2 text-center">
         <input class="form-check-input" type="checkbox" name="images[]" id="image-{{ $image->id }}" value="{{ $image->id }}"
-        @if ($post->images->contains($image->id)) checked @endif
-        >
+        @if ($post->images->contains($image->id)) checked @endif>
         <label class="form-check-label" for="image-{{ $image->id }}">
           <img style="width: 50px" src="{{ $image->url }}" alt="{{ $image->alt }}">
           <p>{{ $image->alt }}</p>

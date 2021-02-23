@@ -35,9 +35,10 @@
     <div class="list-section">
       <ul>
         @foreach ($post->comments as $comment)
-          <li class="shadow p-3 mb-5 bg-white rounded">
+          <li class="shadow p-3 mb-5 bg-white rounded position-relative">
             <small class="author"><strong>{{ $comment->author }}</strong></small>
             <p>{{ $comment->content }}</p>
+            <small class="date">{{ $comment->created_at }}</small>
           </li>
         @endforeach
       </ul>

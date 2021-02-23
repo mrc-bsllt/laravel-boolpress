@@ -20,5 +20,11 @@
     li:not(:last-child) {
       border-bottom: 1px solid $titleColor;
     }
+
+    .date {
+      position: absolute;
+      right: 20px;
+      bottom: 5px;
+    }
   }
 }

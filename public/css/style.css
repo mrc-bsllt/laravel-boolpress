@@ -4746,6 +4746,11 @@ header ul li a:hover {
 #article .list-section li:not(:last-child) {
   border-bottom: 1px solid #121212;
 }
+#article .list-section .date {
+  position: absolute;
+  right: 20px;
+  bottom: 5px;
+}
 
 #crud {
   font-family: "Lora", serif;

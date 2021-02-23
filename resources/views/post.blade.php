@@ -26,7 +26,7 @@
     <div class="list-section">
       <ul>
         @foreach ($post->comments as $comment)
-          <li>
+          <li class="shadow p-3 mb-5 bg-white rounded">
             <small class="author"><strong>{{ $comment->author }}</strong></small>
             <p>{{ $comment->content }}</p>
           </li>
